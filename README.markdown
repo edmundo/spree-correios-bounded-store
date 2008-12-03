@@ -16,7 +16,7 @@ Você pode configurar a sua conta utilizada para acessar o serviço dos correios
 
 ## Testes
 
-O sistema tem algumas ações que respondem com respostas pré-definidas imitando o web service dos correios, você pode rodar duas instâncias do sistema e fazer uma utilizar a outra como servidor de testes, esse é o padrão. A extensão tenta utilizar automaticamente a url de testes como web service se você setar a opção "Sempre utilizar o servidor de testes" ou rodar o sistema em modo de desenvolvimento.
+O sistema tem algumas ações que respondem com respostas pré-definidas imitando o web service dos correios, ... TODO
 
 ## Agradecimentos
 
