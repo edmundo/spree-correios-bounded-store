@@ -1,0 +1,14 @@
+pac:
+  zone: brasil
+  shipping_calculator: Correios::Pac
+  name: Correios PAC
+
+sedex:
+  zone: brasil
+  shipping_calculator: Correios::Sedex
+  name: Correios Sedex
+
+e_sedex:
+  zone: brasil
+  shipping_calculator: Correios::ESedex
+  name: Correios e-Sedex
