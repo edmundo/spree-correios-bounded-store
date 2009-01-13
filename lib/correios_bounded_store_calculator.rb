@@ -5,19 +5,21 @@ SERVICE_REFERENCES = {
   :e_sedex => '81019'     # Returned only when available to the specified zip codes.
 }
 
+# This class is not supposed to be called directly but its subclasses.
 class CorreiosBoundedStoreCalculator
   
-  def calculate_shipping(order)
-    
+  def calculate_shipping(shipment)
+    order = shipment.order
     rates = Rails.cache.fetch(order) do                              
-      rates = retrieve_rates(
+      retrieve_rates(
         Spree::CorreiosBoundedStore::Config[:origin_zip],
-        order.address.zipcode,
+        shipment.address.zipcode,
         total_weight(order),
         20 #total_volume(order)
       )
     end
-    
+
+    # By default PAC.
     default_service = Spree::CorreiosBoundedStore::Config[:on_error_default_service]
     
     # Return an array containing available services or containing a fixed price service on error.
@@ -47,7 +49,8 @@ class CorreiosBoundedStoreCalculator
   end
 
   private  
-  # Retrieves an array of services using the postal web service through a SOAP request.
+
+  # Retrieve an array of services using the postal web service through a SOAP request.
   def retrieve_rates(origin_zip, destination_zip, shipping_weight, shipping_volume)
     params = {
       'nCdEmpresa' => Spree::CorreiosBoundedStore::Config[:company_code],

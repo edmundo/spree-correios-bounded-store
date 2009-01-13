@@ -13,15 +13,9 @@ class CorreiosBoundedStoreExtension < Spree::Extension
   # end
   
   def activate
+
     # Add support for internationalization to this extension.
     Globalite.add_localization_source(File.join(RAILS_ROOT, 'vendor/extensions/correios_bounded_store/lang/ui'))
 
-    # Add the administration link. (Only as a placeholder)
-    Admin::ConfigurationsController.class_eval do
-      before_filter :add_correios_bounded_store_link, :only => :index
-      def add_correios_bounded_store_link
-        @extension_links << {:link => "#" , :link_text => Globalite.localize(:ext_correios_bounded_store), :description => Globalite.localize(:ext_correios_bounded_store_description)}
-      end
-    end
   end
 end

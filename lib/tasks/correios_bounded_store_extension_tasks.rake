@@ -1,15 +1,3 @@
-namespace :db do
-  desc "Bootstrap your database for Spree."
-  task :bootstrap  => :environment do
-    # load initial database fixtures (in db/sample/*.yml) into the current environment's database
-    ActiveRecord::Base.establish_connection(RAILS_ENV.to_sym)
-    Dir.glob(File.join(CorreiosBoundedStoreExtension.root, "db", 'sample', '*.{yml,csv}')).each do |fixture_file|
-      Fixtures.create_fixtures("#{CorreiosBoundedStoreExtension.root}/db/sample", File.basename(fixture_file, '.*'))
-    end
-
-  end
-end
-
 namespace :spree do
   namespace :extensions do
     namespace :correios_bounded_store do
@@ -24,6 +12,24 @@ namespace :spree do
           cp file, RAILS_ROOT + path
         end
       end  
+
+      desc %q\
+      Delete records & load initial database fixtures for this extension (/db/samples/*.yml) into the current environment's database.
+      \
+      task :load_sample_data => :environment do
+
+        EXTENSION_SAMPLE_PATH = 'vendor/extensions/correios_bounded_store/db/sample'
+
+        require 'active_record/fixtures'
+        puts "Loading default data..."
+        sample_fixture_path = File.join(RAILS_ROOT, EXTENSION_SAMPLE_PATH)
+        Dir.glob(File.join(sample_fixture_path, '*.{yml,csv}')).each do |file|
+          Fixtures.create_fixtures(sample_fixture_path, File.basename(file, '.*'))
+        end
+        puts "...done."
+      end
+
+
     end
   end
 end
