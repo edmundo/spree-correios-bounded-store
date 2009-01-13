@@ -14,7 +14,7 @@ namespace :spree do
       end  
 
       desc %q\
-      Delete records & load initial database fixtures for this extension (/db/samples/*.yml) into the current environment's database.
+      Load initial database fixtures for this extension (/db/samples/*.yml) into the current environment's database.
       \
       task :load_sample_data => :environment do
 
