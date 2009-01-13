@@ -24,4 +24,4 @@ O sistema tem algumas ações que respondem com respostas pré-definidas imitand
 
 ## Agradecimentos
 
-Ao Sean Schofield por ter publicado a extensão active_shipping e ter me poupado bastante trabalho.
+Ao Sean Schofield por ter publicado a extensão `active_shipping` e ter me poupado bastante trabalho.
