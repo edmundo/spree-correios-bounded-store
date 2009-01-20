@@ -3,9 +3,9 @@ class Admin::ConfigurationsController < Admin::BaseController
 
   def add_correios_bounded_store_link
     @extension_links << {
-      :link => "#" ,
-      :link_text => Globalite.localize(:ext_correios_bounded_store),
-      :description => Globalite.localize(:ext_correios_bounded_store_description)
+      :link => "#",
+      :link_text => t('ext.correios_bounded_store.extension_name'),
+      :description => t('ext.correios_bounded_store.extension_description')
     }
   end
 end
