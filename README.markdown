@@ -12,6 +12,9 @@ Esta extensão foi baseada na extensão `active_shipping` (suporte aos métodos 
 ## Estado atual
 Em desenvolvimento.
 
+## Código mantido dentro do diretório app a ser mixado
+Atualmente não estou colocando o código dentro do arquivo `..._extension.rb` utilizando `class_eval`, favor dar uma olhada nos últimos commits aqui `http://github.com/edmundo/spree/tree/app_override` para fazer o código de dentro do `app` ser mixado automaticamente.
+
 ## Pendente
 * Levar em consideração não só o peso mas também o volume do pedido no cálculo do preço.
 
