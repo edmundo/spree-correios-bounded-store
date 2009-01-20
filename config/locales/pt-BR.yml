@@ -1,0 +1,11 @@
+pt-BR:
+  ext:
+    live_support:
+      extension_name: Live Support
+      extension_description: Live support.
+
+pt-BR:
+  ext:
+    correios_bounded_store:
+      extension_name: Correios Loja Vinculada
+      extension_description: Suporte ao serviço online dos correios para cálculo de frete, utilizando uma modalidade de contrato chamada "Loja Vinculada".
